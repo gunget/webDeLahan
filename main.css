@@ -301,6 +301,7 @@ header .right li .logo a img:nth-child(2) {
 /* visual 공통 하단 메뉴 */
 .visual .menu {
   position: absolute;
+  width: 30%;
   left: 4%;
   bottom: 7%;
   font-size: 21px;
@@ -347,4 +348,65 @@ header .right li .logo a img:nth-child(2) {
 .visual .menu li p {
   font-size: 28px;
 }
-/* ---------visual02까지 완료 */
+/* visual animation */
+@keyframes trans {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+.visual .slide .slick-active .mainText .num span {
+  animation-name: trans;
+  animation-duration: 4.5s;
+}
+
+@keyframes opa {
+  0% {
+    opacity: 0;
+  }
+}
+
+.visual .slide .slick-active .mainText strong {
+  animation-name: opa;
+  animation-duration: 2s;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.visual .slide .slick-active .mainText > p {
+  animation-name: slide-up;
+  animation-duration: 2s;
+}
+
+@keyframes sacle-ani {
+  0% {
+    transform: scale(1.1);
+  }
+}
+
+.visual .slide li.slick-active img {
+  animation-name: sacle-ani;
+  animation-duration: 4.5s;
+}
+/* 개발자 도구로 .slick-active가 어디에 걸리는지 확인해야 함 */
